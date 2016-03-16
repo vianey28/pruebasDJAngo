@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mostrar datos de Publisher</title>
+	
+</head>
+<body>
+	<div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+    <div class="content container">
+		{% block titulo %} Datos del Publisher {% endblock titulo %}
+		{% block contenido %}
+		<table>
+		 <thead>
+		  <tr>
+		   <th>Nombre</th>
+		   <th>Direccion</th>
+		   <th>Ciudad</th>
+		   <th>Provincia</th>
+		   <th>Pais</th>
+		   <th>Webs</th>
+		  </tr>
+		 </thead>
+		 <tbody>
+		  {% for dato in datos %}
+		  <tr>
+		   <td>{{ dato.name }}</td>
+		   <td>{{ dato.address }}</td>
+		   <td>{{ dato.city }}</td>
+		   <td>{{ dato.state_province}}</td>
+		   <td>{{ dato.country}}</td>
+		   <td>{{ dato.website}}</td>
+		  </tr>
+		  {% empty %}
+		  <tr><td colspan="4">No hay personas registradas</td></tr>
+		  {% endfor %}
+		 </tbody>
+		</table>
+
+		{% endblock contenido %}
+	</div>
+
+
+	
+</body>
+</html>

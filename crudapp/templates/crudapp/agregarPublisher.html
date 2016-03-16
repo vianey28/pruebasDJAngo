@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Formulario de agregar Publisher</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	{% block titulo %} Insertar nueva persona {% endblock titulo %}
+	{% block contenido %}
+	<form method="POST">{% csrf_token %}
+	 
+	 {{ formulario }}
+	 
+	 <input type="submit" value="Enviar" />
+	 
+	</form>
+
+	{% endblock contenido %}
+	
+</body>
+</html>
